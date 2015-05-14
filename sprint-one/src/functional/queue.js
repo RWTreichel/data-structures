@@ -2,30 +2,23 @@ var Queue = function(){
   var someInstance = {};
 
   // Use an object with numeric keys to store values
-  var qCount = 0;
-
   var storage = {};
+  storage.length = 0;
 
   // Implement the methods below
-
   someInstance.enqueue = function(value){
-    storage[qCount] = value;
-    qCount += 1;
+    storage[storage.length] = value;
+    storage.length += 1;
   };
 
   someInstance.dequeue = function(){
-    if(qCount) {
-      qCount -= 1;
-    }
-    
-    var result = storage[0];
-    Array.prototype.unshift(storage);
-    delete storage[qCount];
-    return result;
-    };
+    if(storage.length) {
+      return Array.prototype.shift.call(storage);
+    }  
+  };
 
   someInstance.size = function(){    
-    return qCount;
+    return storage.length;
   };
 
   return someInstance;
