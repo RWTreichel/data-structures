@@ -6,7 +6,6 @@ var BinarySearchTree = function(value){
 
 
 BinarySearchTree.prototype.insert = function(value){
-  // if value is greater than rootnode
   if (value > this.value) {
     if (this.right === null) {
       this.right = new BinarySearchTree(value);
@@ -23,12 +22,6 @@ BinarySearchTree.prototype.insert = function(value){
     // In the case the values are equal
     this.value = value;
   }
-    // if rootnode.right is null
-      // set rootnode.right to value
-    // else
-      // Call .insert recursively on rootnode.right and keep searching
-  // else
-    // add to left
 };
 
 BinarySearchTree.prototype.contains = function(target, result){
