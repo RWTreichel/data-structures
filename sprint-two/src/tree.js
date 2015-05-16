@@ -38,6 +38,6 @@ treeMethods.contains = function(target){
 
 /*
  * Complexity: What is the time complexity of the above functions?
- add 0(1);
+ addChild 0(1);
  contains 0(n);
  */
